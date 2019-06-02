@@ -1,2 +1,2 @@
 # jwt-spring-boot
-JWT With Spring Boot
+JWT for Spring Boot

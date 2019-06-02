@@ -1,0 +1,9 @@
+jwt:
+  issuer: xiongyayun
+  expire: 5 * 60 * 1000
+  header:
+    a1: A1
+    a2: A2
+  payload:
+    b1: B1
+    b2: b2

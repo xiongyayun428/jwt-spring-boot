@@ -16,14 +16,13 @@
 		<groupId>com.xyy.athena</groupId>
 		<artifactId>jwt-spring-boot</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
-		<relativePath>../</relativePath> <!-- lookup parent from repository -->
 	</parent>
 
 	<dependencies>
-		<dependency>
-			<groupId>com.xyy.athena</groupId>
-			<artifactId>jwt-spring-boot-autoconfigure</artifactId>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>com.xyy.athena</groupId>-->
+<!--			<artifactId>jwt-spring-boot-autoconfigure</artifactId>-->
+<!--		</dependency>-->
 	</dependencies>
 
 	<build>

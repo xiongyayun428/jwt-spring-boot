@@ -16,7 +16,6 @@
         <groupId>com.xyy.athena</groupId>
         <artifactId>jwt-spring-boot</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../</relativePath> <!-- lookup parent from repository -->
     </parent>
 
     <dependencies>
@@ -32,13 +31,13 @@
         </dependency>
     </dependencies>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
+<!--    <build>-->
+<!--        <plugins>-->
+<!--            <plugin>-->
+<!--                <groupId>org.springframework.boot</groupId>-->
+<!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--            </plugin>-->
+<!--        </plugins>-->
+<!--    </build>-->
 
 </project>

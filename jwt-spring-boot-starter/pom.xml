@@ -4,9 +4,10 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.xyy.athena</groupId>
     <artifactId>jwt-spring-boot-starter</artifactId>
+    <packaging>jar</packaging>
     <version>0.0.1-SNAPSHOT</version>
-    <name>jwt-spring-boot-starter</name>
-    <description>JWT for Spring Boot</description>
+    <name>JWT Spring Boot Starter</name>
+    <description>JWT Spring Boot Starter</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -16,16 +17,15 @@
         <groupId>com.xyy.athena</groupId>
         <artifactId>jwt-spring-boot</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../</relativePath> <!-- lookup parent from repository -->
     </parent>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
+<!--    <build>-->
+<!--        <plugins>-->
+<!--            <plugin>-->
+<!--                <groupId>org.springframework.boot</groupId>-->
+<!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--            </plugin>-->
+<!--        </plugins>-->
+<!--    </build>-->
 
 </project>

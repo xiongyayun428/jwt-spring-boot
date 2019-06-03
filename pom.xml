@@ -4,20 +4,10 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.xyy.athena</groupId>
 	<artifactId>jwt-spring-boot</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<name>jwt-spring-boot</name>
 	<description>JWT for Spring Boot</description>
 	<packaging>pom</packaging>
-
-	<!-- 项目开发者列表 -->
-	<developers>
-		<developer>
-			<id>XYY</id>
-			<name>Yayun.Xiong</name>
-			<email>xiongyayun428@163.com</email>
-			<url>https://www.xiongyayun.com</url>
-		</developer>
-	</developers>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -31,6 +21,42 @@
 		<version>2.1.5.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+
+	<modules>
+		<module>jwt-spring-boot-autoconfigure</module>
+		<module>jwt-spring-boot-samples</module>
+		<module>jwt-spring-boot-starter</module>
+	</modules>
+
+	<!-- 项目开发者列表 -->
+	<developers>
+		<developer>
+			<id>xiongyayun428</id>
+			<name>Yayun.Xiong</name>
+			<email>xiongyayun428@163.com</email>
+			<url>https://github.com/xiongyayun428/jwt-spring-boot</url>
+		</developer>
+	</developers>
+
+	<issueManagement>
+		<url>https://github.com/xiongyayun428/jwt-spring-boot/issues</url>
+		<system>GitHub Issues</system>
+	</issueManagement>
+
+	<licenses>
+		<license>
+			<name>Apache License 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+
+	<scm>
+		<url>https://github.com/xiongyayun428/jwt-spring-boot</url>
+		<connection>scm:git:git://github.com/xiongyayun428/jwt-spring-boot.git</connection>
+		<developerConnection>scm:git:git@github.com:xiongyayun428/jwt-spring-boot.git</developerConnection>
+		<tag>HEAD</tag>
+	</scm>
 
 	<dependencies>
 		<dependency>
@@ -55,19 +81,117 @@
 		</dependency>
 	</dependencies>
 
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.auth0</groupId>
+				<artifactId>java-jwt</artifactId>
+				<version>3.8.1</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>oss</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>oss</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+	</distributionManagement>
+
+	<profiles>
+		<profile>
+			<id>release</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<version>1.6</version>
+						<executions>
+							<execution>
+								<id>sign-artifacts</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-source-plugin</artifactId>
+						<version>3.1.0</version>
+						<executions>
+							<execution>
+								<id>attach-sources</id>
+								<goals>
+									<goal>jar-no-fork</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<version>3.1.0</version>
+						<executions>
+							<execution>
+								<id>attach-javadocs</id>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+								<configuration>
+									<additionalparam>-Xdoclint:none</additionalparam>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+
+<!--	<repositories>-->
+<!--		<repository>-->
+<!--			<id>maven-aliyun</id>-->
+<!--			<url>http://maven.aliyun.com/nexus/content/groups/public/</url>-->
+<!--			<releases>-->
+<!--				<enabled>true</enabled>-->
+<!--			</releases>-->
+<!--			<snapshots>-->
+<!--				<enabled>true</enabled>-->
+<!--				<updatePolicy>always</updatePolicy>-->
+<!--				<checksumPolicy>fail</checksumPolicy>-->
+<!--			</snapshots>-->
+<!--		</repository>-->
+<!--	</repositories>-->
+
+<!--	<repositories>-->
+<!--		<repository>-->
+<!--			<id>spring-milestones</id>-->
+<!--			<name>Spring Milestones</name>-->
+<!--			<url>https://repo.spring.io/libs-milestone</url>-->
+<!--			<snapshots>-->
+<!--				<enabled>false</enabled>-->
+<!--			</snapshots>-->
+<!--		</repository>-->
+<!--	</repositories>-->
+<!--	<pluginRepositories>-->
+<!--		<pluginRepository>-->
+<!--			<id>spring-milestones</id>-->
+<!--			<name>Spring Milestones</name>-->
+<!--			<url>https://repo.spring.io/libs-milestone</url>-->
+<!--			<snapshots>-->
+<!--				<enabled>false</enabled>-->
+<!--			</snapshots>-->
+<!--		</pluginRepository>-->
+<!--	</pluginRepositories>-->
+
 	<repositories>
-		<!--		<repository>-->
-		<!--			<id>maven-aliyun</id>-->
-		<!--			<url>http://maven.aliyun.com/nexus/content/groups/public/</url>-->
-		<!--			<releases>-->
-		<!--				<enabled>true</enabled>-->
-		<!--			</releases>-->
-		<!--			<snapshots>-->
-		<!--				<enabled>true</enabled>-->
-		<!--				<updatePolicy>always</updatePolicy>-->
-		<!--				<checksumPolicy>fail</checksumPolicy>-->
-		<!--			</snapshots>-->
-		<!--		</repository>-->
 		<repository>
 			<id>nexus</id>
 			<url>http://localhost:8081/repository/maven-public/</url>
@@ -76,5 +200,15 @@
 			</snapshots>
 		</repository>
 	</repositories>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>nexus</id>
+			<url>http://localhost:8081/repository/maven-public/</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
 
 </project>

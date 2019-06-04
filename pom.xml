@@ -79,6 +79,25 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-source-plugin</artifactId>
+			<version>3.1.0</version>
+			<type>maven-plugin</type>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-javadoc-plugin</artifactId>
+			<version>3.1.0</version>
+			<type>maven-plugin</type>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-gpg-plugin</artifactId>
+			<version>1.6</version>
+			<type>maven-plugin</type>
+		</dependency>
 	</dependencies>
 
 	<dependencyManagement>
@@ -145,7 +164,8 @@
 									<goal>jar</goal>
 								</goals>
 								<configuration>
-									<additionalparam>-Xdoclint:none</additionalparam>
+<!--									<doclint>none</doclint>-->
+									<doclint>all,-missing</doclint>
 								</configuration>
 							</execution>
 						</executions>
@@ -194,7 +214,7 @@
 	<repositories>
 		<repository>
 			<id>nexus</id>
-			<url>http://localhost:8081/repository/maven-public/</url>
+			<url>http://dev-www.hljinke.com:8081/repository/maven-public/</url>
 			<snapshots>
 				<enabled>true</enabled>
 			</snapshots>
@@ -204,7 +224,7 @@
 	<pluginRepositories>
 		<pluginRepository>
 			<id>nexus</id>
-			<url>http://localhost:8081/repository/maven-public/</url>
+			<url>http://dev-www.hljinke.com:8081/repository/maven-public/</url>
 			<snapshots>
 				<enabled>true</enabled>
 			</snapshots>
